@@ -4,7 +4,7 @@ describe('Registration tests', () => {
     // so we must tell it to visit our website with the `cy.visit()` command.
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
-    cy.visit('http://localhost:8080/')
+    cy.visit('http://localhost:3000/')
   })
 
   it('enter submit without valid user name',() => {
@@ -34,6 +34,6 @@ describe('Registration tests', () => {
     cy.get('[data-test-id="gender"').select("Male");
     cy.get('[data-test-id="date"').type("2000-01-01");
     cy.get('[data-test-id="submit"]').click();
-    cy.url().should('eq', 'http://localhost:8080/thank-you?') 
+    cy.url().should('eq', 'http://localhost:3000/thank-you') 
   })
 })
